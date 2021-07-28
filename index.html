@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="app">
+    <h1>vuejsUdemy</h1>
+    <button v-on:click="toggleColor = !toggleColor">la couleur</button>
+    <!-- <div class="box"
+    v-bind:class="{red : toggleColor}"
+    ></div> -->
+    <div 
+    v-bind:class="[objCss, toggleColor ?  'bordure' : '' ]"
+    ></div>
+    <p :style="monStyle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio porro praesentium in debitis cupiditate delectus.</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+            toggleColor :false,
+            color: 'blue',
+            width:500
+            }, 
+            computed: {
+                objCss: function () {
+                    return {
+                        red: this.toggleColor,
+                        box:true
+                    }
+                }, monStyle: function () {
+                    return {
+                        backgroundColor: this.color,
+                        width: this.width +"px"
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -12,37 +12,51 @@
 <body>
     <div id="app">
     <h1>vuejsUdemy</h1>
-    <button v-on:click="toggleColor = !toggleColor">la couleur</button>
+    <!-- <button v-on:click="toggleColor = !toggleColor">la couleur</button> -->
+
+    <button v-on:click="toggleBox = !toggleBox">la couleur</button>
+    <!-- <div v-if="toggleBox"></div>
+    <p>haha v-else="toggleBox">haha</p> -->
+
+    <p v-if="num ===1">la valeur est 1</p>
+    <p v-else-if="num ===2">la valeur est 2</p>
+    <p v-else-if="num ===3">la valeur est 3</p>
+    <p  v-else>la valeur >4</p>
+
+
+
     <!-- <div class="box"
     v-bind:class="{red : toggleColor}"
     ></div> -->
-    <div 
+    <!-- <div 
     v-bind:class="[objCss, toggleColor ?  'bordure' : '' ]"
-    ></div>
-    <p :style="monStyle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio porro praesentium in debitis cupiditate delectus.</p>
+    ></div> -->
+    <!-- <p :style="monStyle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio porro praesentium in debitis cupiditate delectus.</p> -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script>
         new Vue({
             el: '#app',
             data: {
-            toggleColor :false,
-            color: 'blue',
-            width:500
+                num: 1,
+                toggleBox :true
+            // toggleColor :false,
+            // color: 'blue',
+            // width:500
             }, 
-            computed: {
-                objCss: function () {
-                    return {
-                        red: this.toggleColor,
-                        box:true
-                    }
-                }, monStyle: function () {
-                    return {
-                        backgroundColor: this.color,
-                        width: this.width +"px"
-                    }
-                }
-            }
+            // computed: {
+            //     objCss: function () {
+            //         return {
+            //             red: this.toggleColor,
+            //             box:true
+            //         }
+            //     }, monStyle: function () {
+            //         return {
+            //             backgroundColor: this.color,
+            //             width: this.width +"px"
+            //         }
+            //     }
+            // }
         });
     </script>
 </body>
